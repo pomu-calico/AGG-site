@@ -1,0 +1,202 @@
+@charset "UTF-8";
+/*レイアウト関連*/
+html{
+    font-size: 100%;
+    font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
+}
+
+.align-left{
+    text-align: left;
+}
+
+.align-right{
+    text-align: right;
+}
+
+.align-center{
+    text-align: center;
+}
+
+.font-serif{
+    font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
+}
+
+.article{
+    font-family:"Yu Gothic", "游ゴシック", "YuGothic", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+    font-size: 17px;
+    padding: 30px 0px 0px 0px; /*上　右　下　左*/
+    display:flex;
+    flex-direction: column;
+    gap: 30px; /* 各段落の間隔 */
+}
+
+a{
+    text-decoration: none;
+}
+
+.two-column{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0px 15px 0px; /*上　右　下　左*/
+}
+
+/* 共通のオーバーレイスタイル */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* 画像より上、文字より下 */
+}
+
+/* 通常のオーバーレイ */
+.overlay.default {
+    background: rgba(255, 255, 255, 0.6); /* 白色・60%透明 */
+}
+
+/* グラデーションのオーバーレイ */
+.overlay.gradation {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0)); /* 右→左へ透明に */
+}
+
+/*画像の修正*/
+.img-fixed-box {
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    object-fit: cover; /* 中央を維持してトリミング */
+    /*border-radius: 8px;  角丸を入れたい場合 */
+}
+.img-fixed-box.default{
+    object-position: center 30%;/* 上方向にずらした表示 */
+}
+.img-fixed-box.kusakabe{
+    object-position: center 0%;/* 上方向にずらした表示 */
+}
+
+
+/*ヘッダー関連*/
+.page-header{
+    position:sticky;/*場所固定*/
+    top:0;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 9999;/*最前面に*/
+    display: flex;
+    text-align: left;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px 0px 0px; /*上　右　下　左*/
+}
+
+.logo{
+    width: 300px;
+}
+
+.main-nav{
+    display: flex;
+    text-align: right;
+    gap:4rem;
+    font-size: 100%;
+    list-style:none;
+    font-weight: bold;
+}
+.main-nav a{
+    color: rgb(1,104,183);
+}
+.main-nav a:hover{
+    color: black;
+}
+
+/*トップ画像関連*/
+.top-index{
+    width: 100%;
+    height: calc(100vh - 70px);
+    color: rgb(0,150,224);/*rgb(1,104,183)*/
+    font-size: 80px;
+    text-align: right;
+    text-shadow: 3px 3px 5px #aaa;
+    overflow: hidden;
+}
+.top-index .text{
+    position: absolute; /* ←ここで重ねる！ */
+    text-align: left;
+    top: 30%;/*親要素の高さの50%位置に子要素の上端を置く*/
+    left: 5%;
+    transform: translateY(-50%);/*縦中央揃え*/
+    color: rgb(1,104,183);
+    font-size: 80px;
+    text-shadow: 3px 3px 5px #aaa;
+    z-index: 2;
+    line-height:150%;
+}
+
+.top-other{
+    position: relative; /* overlayを重ねるために必要 */
+    width: 100vw;
+    height: 50vh;
+    color: rgb(0,150,224);/*rgb(1,104,183)*/
+    font-size: 80px;
+    text-align: center;
+    text-shadow: 3px 3px 5px #aaa;
+    overflow: hidden;/* 念のため画像はみ出し防止 */
+}
+.top-other .text{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgb(1,104,183);
+    font-size: 100px;
+    letter-spacing: 0.1em;/*字間の調整*/
+    z-index: 2; /* オーバーレイより前に出す */
+}
+
+/*カバー画像関連*/
+.cover-img{
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+/*ボディ*/
+body{
+    background-color: rgb(253,253,253);
+    color: black;
+    font-size: 20px;
+    text-align: center;
+} 
+
+.sub-title{
+    font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
+    color: rgb(1,104,183);
+    font-weight: bolder;
+}
+.sub-title.font60{
+    font-size: 60px;
+    padding: 100px 0px 0px 0px; /*上　右　下　左*/
+}
+.sub-title.font{
+    font-size: 40px;
+}
+
+
+.main-text{
+    padding: 10px 300px 10px 300px;
+    font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+}
+
+.catchcopy{
+    font-size: 60px;
+    font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" ;
+    padding: 10px 50px 20px 0px; /*上　右　下　左*/
+    font-weight: bold;
+}
+
+/*フッター関連*/
+.footer{
+    font-size: 15px;
+    font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+}
