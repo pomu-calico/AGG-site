@@ -29,6 +29,9 @@ html{
     flex-direction: column;
     gap: 30px; /* 各段落の間隔 */
 }
+.article.left{
+    text-align: left;
+}
 
 a{
     text-decoration: none;
