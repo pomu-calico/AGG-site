@@ -21,10 +21,14 @@ html{
     font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
 }
 
+.font-gothic{
+    font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体"
+}
+
+
 .article{
-    font-family:"Yu Gothic", "游ゴシック", "YuGothic", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
     font-size: 17px;
-    padding: 30px 0px 0px 0px; /*上　右　下　左*/
+    padding: 20px 0px 20px 0px; /*上　右　下　左*/
     display:flex;
     flex-direction: column;
     gap: 30px; /* 各段落の間隔 */
@@ -41,7 +45,7 @@ a{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 0px 30px 0px; /*上　右　下　左*/
+    padding: 20px 0px 20px 0px; /*上　右　下　左*/
 }
 
 /* 共通のオーバーレイスタイル */
@@ -176,24 +180,25 @@ body{
     font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
     color: rgb(1,104,183);
     font-weight: bolder;
+    text-align: center;
 }
 .sub-title.font60{
     font-size: 60px;
-    padding: 100px 0px 0px 0px; /*上　右　下　左*/
+    padding: 100px 0px 50px 0px; /*上　右　下　左*/
 }
 .sub-title.font{
     font-size: 40px;
+    padding: 100px 0px 0px 0px; /*上　右　下　左*/
 }
 
 
 .main-text{
     padding: 10px 300px 10px 300px;
-    font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+    font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" ;
 }
 
 .catchcopy{
     font-size: 60px;
-    font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" ;
     padding: 10px 50px 20px 0px; /*上　右　下　左*/
     font-weight: bold;
 }
