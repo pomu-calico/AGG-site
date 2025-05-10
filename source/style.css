@@ -203,6 +203,36 @@ body{
     font-weight: bold;
 }
 
+/*会社概要関連*/
+table.info {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Helvetica', 'Yu Gothic', sans-serif;
+    border-spacing: 0;
+}
+
+table.info th,
+table.info td {
+    padding: 16px 20px;
+    border-top: 1px solid rgb(1,104,183); 
+    border-bottom: 1px solid rgb(1,104,183);
+    vertical-align: top;
+    text-align: left;
+}
+
+table.info th {
+    width: 30%;
+    text-align: left;
+    font-weight: normal;
+    background-color: transparent;
+}
+
+table.info td {
+    width: 70%;
+    background-color: transparent;
+}
+
+
 /*フッター関連*/
 .footer{
     font-size: 15px;
