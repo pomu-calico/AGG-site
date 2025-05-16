@@ -65,7 +65,7 @@ a{
 
 /* グラデーションのオーバーレイ */
 .overlay.gradation {
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0)); /* 右→左へ透明に */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0)); /* 右→左へ透明に */
 }
 
 /*画像の修正*/
@@ -87,6 +87,7 @@ a{
 /*ヘッダー関連*/
 .page-header{
     position:sticky;/*場所固定*/
+    font-family: Futura, 'Century Gothic';
     top:0;
     background-color: rgba(255, 255, 255, 0.8);
     z-index: 9999;/*最前面に*/
@@ -95,6 +96,7 @@ a{
     align-items: center;
     justify-content: space-between;
     padding: 10px 50px 0px 0px; /*上　右　下　左*/
+    
 }
 
 .logo{
@@ -125,6 +127,7 @@ a{
     text-align: right;
     text-shadow: 3px 3px 5px #aaa;
     overflow: hidden;
+    /*font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;*/
 }
 .top-index .text1{
     position: absolute; /* ←ここで重ねる！ */
@@ -142,13 +145,13 @@ a{
 .top-index .text2{
     position: absolute; /* ←ここで重ねる！ */
     text-align: left;
-    top: 60%;
+    top: 57%;
     left: 5%;
     transform: translateY(-50%);/*縦中央揃え*/
-    color: black;
+    color: rgb(1,104,183);
     font-size: 40px;
-    font-weight: 500;
-    font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+    font-weight: 750;
+    font-family: Futura, 'Century Gothic';
     z-index: 2;
     line-height:150%;
 }
