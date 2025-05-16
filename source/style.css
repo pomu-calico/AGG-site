@@ -126,15 +126,29 @@ a{
     text-shadow: 3px 3px 5px #aaa;
     overflow: hidden;
 }
-.top-index .text{
+.top-index .text1{
     position: absolute; /* ←ここで重ねる！ */
     text-align: left;
-    top: 30%;/*親要素の高さの50%位置に子要素の上端を置く*/
+    top: 30%;/*親要素の高さの30%位置に子要素の上端を置く*/
     left: 5%;
     transform: translateY(-50%);/*縦中央揃え*/
     color: rgb(1,104,183);
     font-size: 80px;
     text-shadow: 3px 3px 5px #aaa;
+    z-index: 2;
+    line-height:150%;
+}
+
+.top-index .text2{
+    position: absolute; /* ←ここで重ねる！ */
+    text-align: left;
+    top: 60%;
+    left: 5%;
+    transform: translateY(-50%);/*縦中央揃え*/
+    color: black;
+    font-size: 40px;
+    font-weight: 500;
+    font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
     z-index: 2;
     line-height:150%;
 }
@@ -160,6 +174,7 @@ a{
     letter-spacing: 0.1em;/*字間の調整*/
     z-index: 2; /* オーバーレイより前に出す */
 }
+
 
 /*カバー画像関連*/
 .cover-img{
