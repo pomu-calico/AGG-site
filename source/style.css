@@ -48,6 +48,12 @@ a{
     padding: 20px 0px 20px 0px; /*上　右　下　左*/
 }
 
+.img-wrapper {
+    display: flex;
+    justify-content: center; /* 中央寄せ */
+    padding-left: 2%;        /* ちょっと右にずらす */
+}
+
 /* 共通のオーバーレイスタイル */
 .overlay {
     position: absolute;
@@ -158,7 +164,7 @@ a{
 
 .top-other{
     position: relative; /* overlayを重ねるために必要 */
-    width: 100vw;
+    width: 100%;
     height: 50vh;
     color: rgb(0,150,224);/*rgb(1,104,183)*/
     font-size: 80px;
@@ -186,6 +192,11 @@ a{
     object-fit: cover;
 }
 
+/*画像関連*/
+.service-img{
+    width: 70%;
+    height: auto;
+}
 /*ボディ*/
 body{
     background-color: rgb(253,253,253);
@@ -195,9 +206,8 @@ body{
 } 
 
 .sub-title{
-    font-family: Futura, 'Century Gothic';
     color: rgb(1,104,183);
-    font-weight: bolder;
+    font-weight: bold;
     text-align: center;
 }
 .sub-title.font60{
