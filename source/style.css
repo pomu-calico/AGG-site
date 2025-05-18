@@ -45,7 +45,22 @@ a{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0px 20px 0px; /*上　右　下　左*/
+    padding: 0px 0px 50px 0px; /*上　右　下　左*/
+}
+
+.three-column {
+    display: flex;
+    justify-content: space-between; /* 要素間を均等に */
+    align-items: center;            /* 垂直方向の中央揃え */
+    padding: 0px 20px 50px 20px;       
+}
+.three-column.div{
+    padding: 0px 20px 0px 20px;
+}
+
+.three-column > div:nth-child(2) {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
 }
 
 .img-wrapper {
@@ -212,13 +227,17 @@ body{
 }
 .sub-title.font60{
     font-size: 60px;
-    padding: 100px 0px 50px 0px; /*上　右　下　左*/
+    padding: 50px 0px 50px 0px; /*上　右　下　左*/
 }
-.sub-title.font{
+.sub-title.font40{
     font-size: 40px;
-    padding: 100px 0px 0px 0px; /*上　右　下　左*/
+    padding: 50px 0px 0px 0px; /*上　右　下　左*/
 }
 
+.sub-title.service{
+    font-size: 40px;
+    padding: 10px 0px 30px 0px; /*上　右　下　左*/
+}
 
 .main-text{
     padding: 10px 300px 10px 300px;
@@ -263,6 +282,7 @@ table.info td {
 
 /*フッター関連*/
 .footer{
+    padding: 50px 0px 0px 0px; /*上　右　下　左*/
     font-size: 15px;
     font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
 }
