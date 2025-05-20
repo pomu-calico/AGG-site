@@ -67,6 +67,7 @@ a{
     display: flex;
     justify-content: center; /* 中央寄せ */
     padding-left: 2%;        /* ちょっと右にずらす */
+    padding: 30px 20px 30px 20px;
 }
 
 /* 共通のオーバーレイスタイル */
@@ -96,6 +97,7 @@ a{
     height: 300px;
     object-fit: cover; /* 中央を維持してトリミング */
     /*border-radius: 8px;  角丸を入れたい場合 */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* 右5px、下5px、ぼかし10px、黒の20%透明 */
 }
 .img-fixed-box.default{
     object-position: center 30%;/* 上方向にずらした表示 */
@@ -211,6 +213,14 @@ a{
 .service-img{
     width: 70%;
     height: auto;
+}
+
+.feature-img{
+    height: auto;
+    width: 80%;           
+    display: block;        /* 余計な隙間を防ぐ */
+    object-fit: contain;   /* オプション（主にimgが親要素に対して使う場合） */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* 右5px、下5px、ぼかし10px、黒の20%透明 */
 }
 /*ボディ*/
 body{
