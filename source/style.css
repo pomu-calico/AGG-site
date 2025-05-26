@@ -45,7 +45,10 @@ a{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 0px 50px 0px; /*上　右　下　左*/
+    padding: 25px 0px 25px 0px; /*上　右　下　左*/
+}.two-column.place{
+    justify-content: center;/* 要素を中央寄せ */
+    gap: 20px;                        /* 画像と地図の間隔を20pxに固定 */
 }
 
 .three-column {
@@ -54,7 +57,7 @@ a{
     align-items: center;            /* 垂直方向の中央揃え */
     padding: 0px 20px 50px 20px;       
 }
-.three-column.div{
+.three-column div{
     padding: 0px 20px 0px 20px;
 }
 
@@ -246,11 +249,11 @@ body{
 
 .sub-title.service{
     font-size: 40px;
-    padding: 10px 0px 30px 0px; /*上　右　下　左*/
+    padding: 10px 10px 30px 10px; /*上　右　下　左*/
 }
 
 .main-text{
-    padding: 10px 300px 10px 300px;
+    padding: 10px 250px 10px 250px;/*左右の白帯*/
     font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" ;
 }
 
@@ -258,6 +261,18 @@ body{
     font-size: 60px;
     padding: 10px 50px 20px 0px; /*上　右　下　左*/
     font-weight: bold;
+}
+
+/*開発拠点関連*/
+.development-place-img {
+    width: 100%;               /* 親要素に合わせてリサイズ */
+    height: auto;              /* アスペクト比維持 */
+    display: block;
+}
+
+.location-map {
+    flex: 1;                   /* 幅を均等に分ける */
+    max-width: 520px;          /* 最大幅を揃える（地図に合わせた） */
 }
 
 /*会社概要関連*/
