@@ -109,6 +109,15 @@ a{
     object-position: center 0%;/* 上方向にずらした表示 */
 }
 
+.img-fixed-box2 {
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    object-fit: cover; /* 中央を維持してトリミング */
+    /*border-radius: 8px;  角丸を入れたい場合 */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* 右5px、下5px、ぼかし10px、黒の20%透明 */
+}
+
 
 /*ヘッダー関連*/
 .page-header{
