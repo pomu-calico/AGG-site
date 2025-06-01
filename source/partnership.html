@@ -25,75 +25,72 @@
                 <li><a href="feature.html">Feature</a></li>
                 <li><a href="partnership.html">Partnership</a></li>
                 <li><a href="development_place.html">Development Place</a></li>
-            
+
             </ul>
         </nav>
     </header>
 
-    <div class = "top-other">
-        <img class = "cover-img"src="../image/partnership2.jpg" alt="パートナーシップタイトル画像"style="object-position: center 38%;">
+    <div class="top-other">
+        <img class="cover-img" src="../image/partnership2.jpg" alt="パートナーシップタイトル画像"
+            style="object-position: center 38%;">
         <div class="overlay default"></div>
         <div class="text">
-            Partnership 
+            Partnership
         </div>
     </div>
 
-    <main class = "main-text">
+    <main class="main-text">
         アクセンチュア / Infosys / Wipro / タタコンサルタンシーサービス社がリクルート先として提携している、以下4つのIT大学とMOUを締結。<br>
         5,000人のエンジニアリストからエンジニア獲得を実現いたします。
-        <section class="two-column">
-            <div class="font-serif" style="font-weight:bolder; font-size: 130%; width: 50%;">
-                <img class="img-fixed-box2" src="../image/sanninn.jpg" alt="MIT提携の画像">
-            </div>
+        <section class="partnership-section">
+            <img class="company-logo" src="../image/logo1.png" alt="自社ロゴ">
 
-            <div style="width: 55%;">
-                <div class="font-serif" style="font-size: 150%; font-weight: 700;">
-                    MIT Art, Design&Technology University
-                    <img class="" src="../image/MIT-Logo.png" alt="MITのロゴ">
+            <div class="cross-mark">×</div>
+
+            <div class="university-slider">
+                <div class="university-page active">
+                    <img src="/image/MIT-Logo.png" alt="MIT ADT 大学のロゴ">
+                </div>
+                <div class="university-page">
+                    <img src="/image/SMM.png" alt="Anantrao Pawar 工科大学のロゴ">
+                </div>
+                <div class="university-page">
+                    <img src="/image/vit.png" alt="Vishwakarma 工科大学のロゴ">
+                </div>
+                <div class="university-page">
+                    <img src="/image/Sanjivani.png" alt="Sanjivani 工科大学のロゴ">
                 </div>
             </div>
         </section>
 
-        <section class="two-column">
-            <div style="width: 55%;">
-                <div class="font-serif" style="font-size: 150%; font-weight: 700;">
-                    AKHIL BHARATIYA MARATHA SHIKSHAN PARISHAD'S ANANTRAO PAWAR COLLEGE OF ENGINEERING & RESEARCH
-                    <img class="" src="../image/SMM.png" alt="PAWARのロゴ">
+        <section class="university-grid">
+            <a href="https://mituniversity.ac.in/">
+                <div class="university-card">
+                    <img src="/image/MIT-Logo.png" alt="MIT ADT 大学のロゴ">
+                    <p>MIT芸術・デザイン・技術大学<br>(MIT Art, Design & Technology University)</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="font-serif" style="font-weight:bolder; font-size: 130%; width: 50%;">
-                <img class="img-fixed-box2" src="../image/akusyu2.jpg" alt="PAWAR提携の画像">
-            </div>
+            <a href="https://abmspcoerpune.org/">
+                <div class="university-card">
+                    <img src="/image/SMM.png" alt="Anantrao Pawar 工科大学のロゴ">
+                    <p>アナントラオ・パワール工科大学<br>(Anantrao Pawar College of Engineering & Research)</p>
+                </div>
+            </a>
+            <a href="https://www.vit.edu/">
+                <div class="university-card">
+                    <img src="/image/vit.png" alt="Vishwakarma 工科大学のロゴ">
+                    <p>ヴィシュワカルマ工科大学<br>(Vishwakarma Institute of Technology)</p>
+                </div>
+            </a>
+            <a href="https://sanjivanicoe.org.in/">
+                <div class="university-card">
+                    <img src="/image/Sanjivani.png" alt="Sanjivani 工科大学のロゴ">
+                    <p>サンジヴァニ工科大学 コーパルガオン校<br>(Sanjivani College of Engineering, Kopargaon)</p>
+                </div>
+            </a>
         </section>
 
-        <section class="two-column">
-            <div class="font-serif" style="font-weight:bolder; font-size: 130%; width: 50%;">
-                <img class="img-fixed-box2" src="../image/akusyu.jpg" alt="VIT提携の画像">
-            </div>
-
-            <div style="width: 55%;">
-                <div class="font-serif" style="font-size: 150%; font-weight: 700;">
-                    VISHWAKARMA INSTITUTE OF TECHNOLOGY
-                    <img class="" src="../image/VIT.png" alt="VITのロゴ">
-                </div>
-            </div>
-        </section>
-
-        <section class="two-column">
-            <div style="width: 55%;">
-                <div class="font-serif" style="font-size: 150%; font-weight: 700;">
-                    Sanjivani College of Engineering, Kopargaon
-                    <img class="" src="../image/Sanjivani.jpg" alt="VITのロゴ">
-                </div>
-            </div>
-
-            <div class="font-serif" style="font-weight:bolder; font-size: 130%; width: 50%;">
-                <img class="img-fixed-box2" src="../image/hutari.jpg" alt="当社エンジニアの集合写真">
-            </div>
-        </section>
-
-            
     </main>
 
     <footer class="footer">
@@ -101,4 +98,14 @@
             href="https://forms.zohopublic.jp/awajiglobalgateway/form/Untitled/formperma/vkL9Oxo6yr37k5T3KLMp_VE71raLrT_iMLEaLNCX82o">こちら</a>から
         <p class="copyright">©AGG Awaji Global gateway All Rights Reserved.</p>
     </footer>
+    <script>
+        let index = 0;
+        const pages = document.querySelectorAll(".university-page");
+
+        setInterval(() => {
+            pages[index].classList.remove("active");
+            index = (index + 1) % pages.length;
+            pages[index].classList.add("active");
+        }, 3000); // 3秒ごとに切り替え
+    </script>
 </body>

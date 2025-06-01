@@ -1,75 +1,89 @@
 @charset "UTF-8";
+
 /*レイアウト関連*/
-html{
+html {
     font-size: 100%;
-    font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
+    font-family: "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif;
 }
 
-.align-left{
+.align-left {
     text-align: left;
 }
 
-.align-right{
+.align-right {
     text-align: right;
 }
 
-.align-center{
+.align-center {
     text-align: center;
 }
 
-.font-serif{
-    font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
+.font-serif {
+    font-family: "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif;
 }
 
-.font-gothic{
-    font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体"
+.font-gothic {
+    font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体"
 }
 
 
-.article{
+.article {
     font-size: 17px;
-    padding: 20px 0px 20px 0px; /*上　右　下　左*/
-    display:flex;
+    padding: 20px 0px 20px 0px;
+    /*上　右　下　左*/
+    display: flex;
     flex-direction: column;
-    gap: 30px; /* 各段落の間隔 */
+    gap: 30px;
+    /* 各段落の間隔 */
 }
-.article.left{
+
+.article.left {
     text-align: left;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-.two-column{
-    display:flex;
+.two-column {
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 0px 25px 0px; /*上　右　下　左*/
-}.two-column.place{
-    justify-content: center;/* 要素を中央寄せ */
-    gap: 20px;                        /* 画像と地図の間隔を20pxに固定 */
+    padding: 25px 0px 25px 0px;
+    /*上　右　下　左*/
+}
+
+.two-column.place {
+    justify-content: center;
+    /* 要素を中央寄せ */
+    gap: 20px;
+    /* 画像と地図の間隔を20pxに固定 */
 }
 
 .three-column {
     display: flex;
-    justify-content: space-between; /* 要素間を均等に */
-    align-items: center;            /* 垂直方向の中央揃え */
-    padding: 0px 20px 50px 20px;       
+    justify-content: space-between;
+    /* 要素間を均等に */
+    align-items: center;
+    /* 垂直方向の中央揃え */
+    padding: 0px 20px 50px 20px;
 }
-.three-column div{
+
+.three-column div {
     padding: 0px 20px 0px 20px;
 }
 
-.three-column > div:nth-child(2) {
+.three-column>div:nth-child(2) {
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
 }
 
 .img-wrapper {
     display: flex;
-    justify-content: center; /* 中央寄せ */
-    padding-left: 2%;        /* ちょっと右にずらす */
+    justify-content: center;
+    /* 中央寄せ */
+    padding-left: 2%;
+    /* ちょっと右にずらす */
     padding: 30px 20px 30px 20px;
 }
 
@@ -80,17 +94,20 @@ a{
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* 画像より上、文字より下 */
+    z-index: 1;
+    /* 画像より上、文字より下 */
 }
 
 /* 通常のオーバーレイ */
 .overlay.default {
-    background: rgba(255, 255, 255, 0.6); /* 白色・60%透明 */
+    background: rgba(255, 255, 255, 0.6);
+    /* 白色・60%透明 */
 }
 
 /* グラデーションのオーバーレイ */
 .overlay.gradation {
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0)); /* 右→左へ透明に */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+    /* 右→左へ透明に */
 }
 
 /*画像の修正*/
@@ -98,190 +115,333 @@ a{
     text-align: center;
     width: 300px;
     height: 300px;
-    object-fit: cover; /* 中央を維持してトリミング */
+    object-fit: cover;
+    /* 中央を維持してトリミング */
     /*border-radius: 8px;  角丸を入れたい場合 */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* 右5px、下5px、ぼかし10px、黒の20%透明 */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    /* 右5px、下5px、ぼかし10px、黒の20%透明 */
 }
-.img-fixed-box.default{
-    object-position: center 30%;/* 上方向にずらした表示 */
+
+.img-fixed-box.default {
+    object-position: center 30%;
+    /* 上方向にずらした表示 */
 }
-.img-fixed-box.kusakabe{
-    object-position: center 0%;/* 上方向にずらした表示 */
+
+.img-fixed-box.kusakabe {
+    object-position: center 0%;
+    /* 上方向にずらした表示 */
 }
 
 .img-fixed-box2 {
     text-align: center;
     width: 400px;
     height: 400px;
-    object-fit: cover; /* 中央を維持してトリミング */
+    object-fit: cover;
+    /* 中央を維持してトリミング */
     /*border-radius: 8px;  角丸を入れたい場合 */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* 右5px、下5px、ぼかし10px、黒の20%透明 */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    /* 右5px、下5px、ぼかし10px、黒の20%透明 */
+}
+
+.img-fixed-logo {
+    text-align: center;
+    width: auto;
+    height: 300px;
+    /*border-radius: 8px;  角丸を入れたい場合 */
 }
 
 
+/* 大学ロゴ動的処理部分関連*/
+.partnership-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.company-logo {
+    width: 500px;
+    height: auto;
+}
+
+.cross-mark {
+    font-size: 70px;
+    font-weight: bold;
+    color: #333;
+}
+
+.university-slider {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.university-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.university-page.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.university-page img {
+    width: auto;
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.university-page p {
+    font-size: 13px;
+    line-height: 1.4;
+    color: #333;
+}
+
+/*ロゴカード関連*/
+.university-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.university-card {
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.university-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.university-card img {
+    width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.university-card p {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+
+
 /*ヘッダー関連*/
-.page-header{
-    position:sticky;/*場所固定*/
+.page-header {
+    position: sticky;
+    /*場所固定*/
     font-family: Futura, 'Century Gothic';
-    top:0;
+    top: 0;
     background-color: rgba(255, 255, 255, 0.8);
-    z-index: 9999;/*最前面に*/
+    z-index: 9999;
+    /*最前面に*/
     display: flex;
     text-align: left;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 50px 0px 0px; /*上　右　下　左*/
-    
+    padding: 10px 50px 0px 0px;
+    /*上　右　下　左*/
+
 }
 
-.logo{
+.logo {
     width: 300px;
 }
 
-.main-nav{
+.main-nav {
     display: flex;
     text-align: right;
-    gap:4rem;
+    gap: 4rem;
     font-size: 100%;
-    list-style:none;
+    list-style: none;
     font-weight: bold;
 }
-.main-nav a{
-    color: rgb(1,104,183);
+
+.main-nav a {
+    color: rgb(1, 104, 183);
 }
-.main-nav a:hover{
+
+.main-nav a:hover {
     color: black;
 }
 
 /*トップ画像関連*/
-.top-index{
+.top-index {
     width: 100%;
     height: calc(100vh - 70px);
-    color: rgb(0,150,224);/*rgb(1,104,183)*/
+    color: rgb(0, 150, 224);
+    /*rgb(1,104,183)*/
     font-size: 80px;
     text-align: right;
     text-shadow: 3px 3px 5px #aaa;
     overflow: hidden;
     /*font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;*/
 }
-.top-index .text1{
-    position: absolute; /* ←ここで重ねる！ */
+
+.top-index .text1 {
+    position: absolute;
+    /* ←ここで重ねる！ */
     text-align: left;
-    top: 30%;/*親要素の高さの30%位置に子要素の上端を置く*/
+    top: 30%;
+    /*親要素の高さの30%位置に子要素の上端を置く*/
     left: 5%;
-    transform: translateY(-50%);/*縦中央揃え*/
-    color: rgb(1,104,183);
+    transform: translateY(-50%);
+    /*縦中央揃え*/
+    color: rgb(1, 104, 183);
     font-size: 80px;
     text-shadow: 3px 3px 5px #aaa;
     z-index: 2;
-    line-height:150%;
+    line-height: 150%;
 }
 
-.top-index .text2{
-    position: absolute; /* ←ここで重ねる！ */
+.top-index .text2 {
+    position: absolute;
+    /* ←ここで重ねる！ */
     text-align: left;
     top: 57%;
     left: 5%;
-    transform: translateY(-50%);/*縦中央揃え*/
-    color: rgb(1,104,183);
+    transform: translateY(-50%);
+    /*縦中央揃え*/
+    color: rgb(1, 104, 183);
     font-size: 40px;
     font-weight: 750;
     font-family: Futura, 'Century Gothic';
     z-index: 2;
-    line-height:150%;
+    line-height: 150%;
 }
 
-.top-other{
-    position: relative; /* overlayを重ねるために必要 */
+.top-other {
+    position: relative;
+    /* overlayを重ねるために必要 */
     width: 100%;
     height: 50vh;
-    color: rgb(0,150,224);/*rgb(1,104,183)*/
+    color: rgb(0, 150, 224);
+    /*rgb(1,104,183)*/
     font-size: 80px;
     text-align: center;
     text-shadow: 3px 3px 5px #aaa;
-    overflow: hidden;/* 念のため画像はみ出し防止 */
+    overflow: hidden;
+    /* 念のため画像はみ出し防止 */
 }
-.top-other .text{
+
+.top-other .text {
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: rgb(1,104,183);
+    color: rgb(1, 104, 183);
     font-size: 100px;
-    letter-spacing: 0.1em;/*字間の調整*/
-    z-index: 2; /* オーバーレイより前に出す */
+    letter-spacing: 0.1em;
+    /*字間の調整*/
+    z-index: 2;
+    /* オーバーレイより前に出す */
 }
 
 
 /*カバー画像関連*/
-.cover-img{
+.cover-img {
     width: 100%;
     height: 80%;
     object-fit: cover;
 }
 
 /*画像関連*/
-.service-img{
+.service-img {
     width: 70%;
     height: auto;
 }
 
-.feature-img{
+.feature-img {
     height: auto;
-    width: 80%;           
-    display: block;        /* 余計な隙間を防ぐ */
-    object-fit: contain;   /* オプション（主にimgが親要素に対して使う場合） */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* 右5px、下5px、ぼかし10px、黒の20%透明 */
+    width: 80%;
+    display: block;
+    /* 余計な隙間を防ぐ */
+    object-fit: contain;
+    /* オプション（主にimgが親要素に対して使う場合） */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    /* 右5px、下5px、ぼかし10px、黒の20%透明 */
 }
+
 /*ボディ*/
-body{
-    background-color: rgb(253,253,253);
+body {
+    background-color: rgb(253, 253, 253);
     color: black;
     font-size: 20px;
     text-align: center;
-} 
+}
 
-.sub-title{
-    color: rgb(1,104,183);
+.sub-title {
+    color: rgb(1, 104, 183);
     font-weight: bold;
     text-align: center;
 }
-.sub-title.font60{
+
+.sub-title.font60 {
     font-size: 60px;
-    padding: 50px 0px 50px 0px; /*上　右　下　左*/
+    padding: 50px 0px 50px 0px;
+    /*上　右　下　左*/
 }
-.sub-title.font40{
+
+.sub-title.font40 {
     font-size: 40px;
-    padding: 50px 0px 0px 0px; /*上　右　下　左*/
+    padding: 50px 0px 0px 0px;
+    /*上　右　下　左*/
 }
 
-.sub-title.service{
+.sub-title.service {
     font-size: 40px;
-    padding: 10px 10px 30px 10px; /*上　右　下　左*/
+    padding: 10px 10px 30px 10px;
+    /*上　右　下　左*/
 }
 
-.main-text{
-    padding: 10px 250px 10px 250px;/*左右の白帯*/
-    font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" ;
+.main-text {
+    padding: 10px 250px 10px 250px;
+    /*左右の白帯*/
+    font-family: "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝";
 }
 
-.catchcopy{
+.catchcopy {
     font-size: 60px;
-    padding: 10px 50px 20px 0px; /*上　右　下　左*/
+    padding: 10px 50px 20px 0px;
+    /*上　右　下　左*/
     font-weight: bold;
 }
 
 /*開発拠点関連*/
 .development-place-img {
-    width: 100%;               /* 親要素に合わせてリサイズ */
-    height: auto;              /* アスペクト比維持 */
+    width: 100%;
+    /* 親要素に合わせてリサイズ */
+    height: auto;
+    /* アスペクト比維持 */
     display: block;
 }
 
 .location-map {
-    flex: 1;                   /* 幅を均等に分ける */
-    max-width: 520px;          /* 最大幅を揃える（地図に合わせた） */
+    flex: 1;
+    /* 幅を均等に分ける */
+    max-width: 520px;
+    /* 最大幅を揃える（地図に合わせた） */
 }
 
 /*会社概要関連*/
@@ -295,8 +455,8 @@ table.info {
 table.info th,
 table.info td {
     padding: 16px 20px;
-    border-top: 1px solid rgb(1,104,183); 
-    border-bottom: 1px solid rgb(1,104,183);
+    border-top: 1px solid rgb(1, 104, 183);
+    border-bottom: 1px solid rgb(1, 104, 183);
     vertical-align: top;
     text-align: left;
 }
@@ -315,8 +475,9 @@ table.info td {
 
 
 /*フッター関連*/
-.footer{
-    padding: 50px 0px 0px 0px; /*上　右　下　左*/
+.footer {
+    padding: 50px 0px 0px 0px;
+    /*上　右　下　左*/
     font-size: 15px;
-    font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+    font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
 }
