@@ -308,7 +308,7 @@ a {
     transform: translateY(-50%);
     /*縦中央揃え*/
     color: rgb(1, 104, 183);
-    font-size: 80px;
+    font-size: 90px;
     text-shadow: 3px 3px 5px #aaa;
     z-index: 2;
     line-height: 150%;
@@ -318,12 +318,12 @@ a {
     position: absolute;
     /* ←ここで重ねる！ */
     text-align: left;
-    top: 57%;
+    top: 60%;
     left: 5%;
     transform: translateY(-50%);
     /*縦中央揃え*/
     color: rgb(1, 104, 183);
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 750;
     font-family: Futura, 'Century Gothic';
     z-index: 2;
