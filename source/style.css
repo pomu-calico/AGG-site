@@ -445,6 +445,10 @@ body {
     /* 最大幅を揃える（地図に合わせた） */
 }
 
+.setup-assistance{
+    
+}
+
 /*会社概要関連*/
 table.info {
     width: 100%;
