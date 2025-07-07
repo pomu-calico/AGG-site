@@ -56,25 +56,25 @@
         </section>
 
         <div class="sub-title font60 align-left">Work Scene</div>
-        <section class="work-scene-slider">
-            <div class="slider-container">
-                <button class="nav-button prev"></button>
+        <div class="slider-container">
+            <button class="nav-button prev"></button>
 
+            <div class="slider-wrapper">
                 <div class="slider">
                     <div class="slide active">
                         <img src="/image/meeting.jpg" alt="ミーティング風景">
                     </div>
                     <div class="slide">
-                        <img src="/image/scene2.jpg" alt="開発の様子">
+                        <img src="/image/skill_header.jpg" alt="開発の様子">
                     </div>
                     <div class="slide">
                         <img src="/image/scene3.jpg" alt="ランチ中の様子">
                     </div>
                 </div>
-
-                <button class="nav-button next"></button>
             </div>
-        </section>
+
+            <button class="nav-button next"></button> 
+        </div>
 
     </main>
 
@@ -84,27 +84,62 @@
         <p class="copyright">©AGG Awaji Global gateway All Rights Reserved.</p>
     </footer>
     <script>
-        const slides = document.querySelectorAll(".slide");
-        const nextBtn = document.querySelector(".next");
-        const prevBtn = document.querySelector(".prev");
-        let current = 0;
+        document.addEventListener("DOMContentLoaded", () => {
+            const slider = document.querySelector('.slider');
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.querySelector('.nav-button.prev');
+            const nextBtn = document.querySelector('.nav-button.next');
+            let currentIndex = 0;
 
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.remove("active");
+            const totalSlides = slides.length;
+            const slideWidth = slides[0].offsetWidth + 20; // width + margin
+            const wrapper = document.querySelector('.slider-wrapper');
+
+            function updateSliderPosition() {
+                const centerOffset = (wrapper.offsetWidth - slideWidth) / 2;
+                const offset = -(slideWidth * currentIndex) + centerOffset;
+                slider.style.transform = `translateX(${offset}px)`;
+
+                slides.forEach((slide, index) => {
+                    slide.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateSliderPosition();
             });
-            slides[index].classList.add("active");
-        }
 
-        nextBtn.addEventListener("click", () => {
-            current = (current + 1) % slides.length;
-            showSlide(current);
-        });
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateSliderPosition();
+            });
 
-        prevBtn.addEventListener("click", () => {
-            current = (current - 1 + slides.length) % slides.length;
-            showSlide(current);
+            // スワイプ対応
+            let startX = 0;
+
+            slider.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+            });
+
+            slider.addEventListener('touchend', (e) => {
+                const endX = e.changedTouches[0].clientX;
+                const delta = endX - startX;
+
+                if (delta > 50) {
+                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                } else if (delta < -50) {
+                    currentIndex = (currentIndex + 1) % totalSlides;
+                }
+                updateSliderPosition();
+            });
+
+            // リサイズ時も中央に
+            window.addEventListener('resize', updateSliderPosition);
+
+            updateSliderPosition(); // 初期表示
         });
     </script>
+
 
 </body>
