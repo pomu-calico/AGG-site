@@ -345,6 +345,7 @@ a {
 }
 
 .top-other .text {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     position: absolute;
     top: 40%;
     left: 50%;
@@ -414,6 +415,13 @@ body {
     font-size: 40px;
     padding: 10px 10px 30px 10px;
     /*上　右　下　左*/
+}
+
+.sub-sub-title {
+    color: rgb(0, 150, 224);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
+    font-weight: bold;
+    text-align: center;
 }
 
 .main-text {
