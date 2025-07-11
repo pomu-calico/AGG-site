@@ -345,18 +345,20 @@ a {
 }
 
 .top-other .text {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'DM Sans', sans-serif, 'Franklin Gothic Medium', 'Arial Narrow', Arial;
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: rgb(1, 104, 183);
+    font-weight: bold;
     font-size: 100px;
-    letter-spacing: 0.1em;
-    /*字間の調整*/
-    z-index: 2;
-    /* オーバーレイより前に出す */
+    letter-spacing: 0.1em;/*字間の調整*/
+    z-index: 2;/* オーバーレイより前に出す */
+    white-space: nowrap;/* 改行させない */
+    overflow: hidden;/* はみ出した部分は非表示にする（任意） */
+    text-overflow: ellipsis;/* はみ出し時に「…」表示（任意） */
 }
 
 
@@ -394,7 +396,7 @@ body {
 
 .sub-title {
     color: rgb(1, 104, 183);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', sans-serif, 'Franklin Gothic Medium', 'Arial Narrow', Arial;
     font-weight: bold;
     text-align: center;
 }
@@ -419,7 +421,6 @@ body {
 
 .sub-sub-title {
     color: rgb(0, 150, 224);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
     font-weight: bold;
     text-align: center;
 }
