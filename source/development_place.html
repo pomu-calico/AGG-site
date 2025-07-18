@@ -82,7 +82,7 @@
                 </div>
             </div>
 
-            <button class="nav-button next"></button> 
+            <button class="nav-button next"></button>
         </div>
 
     </main>
@@ -93,62 +93,84 @@
         <p class="copyright">©AGG Awaji Global gateway All Rights Reserved.</p>
     </footer>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener('DOMContentLoaded', () => {
             const slider = document.querySelector('.slider');
             const slides = document.querySelectorAll('.slide');
             const prevBtn = document.querySelector('.nav-button.prev');
             const nextBtn = document.querySelector('.nav-button.next');
-            let currentIndex = 0;
 
-            const totalSlides = slides.length;
-            const slideWidth = slides[0].offsetWidth + 20; // width + margin
-            const wrapper = document.querySelector('.slider-wrapper');
+            const slideCount = slides.length;
+            let currentIndex = 1;
 
-            function updateSliderPosition() {
-                const centerOffset = (wrapper.offsetWidth - slideWidth) / 2;
-                const offset = -(slideWidth * currentIndex) + centerOffset;
-                slider.style.transform = `translateX(${offset}px)`;
+            // クローン作成
+            const firstClone = slides[0].cloneNode(true);
+            const lastClone = slides[slideCount - 1].cloneNode(true);
+            firstClone.classList.add('clone');
+            lastClone.classList.add('clone');
+            slider.appendChild(firstClone);
+            slider.insertBefore(lastClone, slides[0]);
 
-                slides.forEach((slide, index) => {
-                    slide.classList.toggle('active', index === currentIndex);
-                });
+            const allSlides = document.querySelectorAll('.slide');
+
+            // スライド幅を取得
+            function getSlideWidth() {
+                return allSlides[0].getBoundingClientRect().width;
             }
 
-            prevBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                updateSliderPosition();
-            });
+            function setInitialPosition() {
+                const slideWidth = getSlideWidth();
+                slider.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+                updateActiveSlide();
+            }
+
+            setInitialPosition();
+
+            function updateActiveSlide() {
+                allSlides.forEach(slide => slide.classList.remove('active'));
+                allSlides[currentIndex].classList.add('active');
+            }
+
+            function moveToSlide(index) {
+                const slideWidth = getSlideWidth();
+                slider.style.transition = 'transform 0.4s ease';
+                slider.style.transform = `translateX(-${slideWidth * index}px)`;
+                currentIndex = index;
+                updateActiveSlide();
+            }
 
             nextBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % totalSlides;
-                updateSliderPosition();
+                if (currentIndex >= allSlides.length - 1) return;
+                moveToSlide(currentIndex + 1);
             });
 
-            // スワイプ対応
-            let startX = 0;
-
-            slider.addEventListener('touchstart', (e) => {
-                startX = e.touches[0].clientX;
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex <= 0) return;
+                moveToSlide(currentIndex - 1);
             });
 
-            slider.addEventListener('touchend', (e) => {
-                const endX = e.changedTouches[0].clientX;
-                const delta = endX - startX;
-
-                if (delta > 50) {
-                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                } else if (delta < -50) {
-                    currentIndex = (currentIndex + 1) % totalSlides;
+            slider.addEventListener('transitionend', () => {
+                if (allSlides[currentIndex].classList.contains('clone')) {
+                    slider.style.transition = 'none';
+                    if (currentIndex === allSlides.length - 1) {
+                        currentIndex = 1;
+                    } else if (currentIndex === 0) {
+                        currentIndex = allSlides.length - 2;
+                    }
+                    const slideWidth = getSlideWidth();
+                    slider.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+                    updateActiveSlide();
                 }
-                updateSliderPosition();
             });
 
-            // リサイズ時も中央に
-            window.addEventListener('resize', updateSliderPosition);
-
-            updateSliderPosition(); // 初期表示
+            // リサイズ時に再調整
+            window.addEventListener('resize', () => {
+                const slideWidth = getSlideWidth();
+                slider.style.transition = 'none';
+                slider.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+            });
         });
     </script>
+
 
 
 </body>

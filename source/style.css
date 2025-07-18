@@ -3,7 +3,7 @@
 /*レイアウト関連*/
 html {
     font-size: 100%;
-    font-family: "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+    font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
 }
 
 .align-left {
@@ -150,6 +150,17 @@ a {
     /*border-radius: 8px;  角丸を入れたい場合 */
 }
 
+.blue-card {
+    /*background-color: rgb(0, 150, 224);*/
+    background-color:rgb(1, 104, 183);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.blue-card div{
+    color:white;
+}
 
 /* 大学ロゴ動的処理部分関連*/
 .partnership-section {
@@ -299,6 +310,8 @@ a {
 }
 
 .top-index .text1 {
+    font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+    font-weight: bold;
     position: absolute;
     /* ←ここで重ねる！ */
     text-align: left;
@@ -354,11 +367,16 @@ a {
     color: rgb(1, 104, 183);
     font-weight: bold;
     font-size: 100px;
-    letter-spacing: 0.1em;/*字間の調整*/
-    z-index: 2;/* オーバーレイより前に出す */
-    white-space: nowrap;/* 改行させない */
-    overflow: hidden;/* はみ出した部分は非表示にする（任意） */
-    text-overflow: ellipsis;/* はみ出し時に「…」表示（任意） */
+    letter-spacing: 0.1em;
+    /*字間の調整*/
+    z-index: 2;
+    /* オーバーレイより前に出す */
+    white-space: nowrap;
+    /* 改行させない */
+    overflow: hidden;
+    /* はみ出した部分は非表示にする（任意） */
+    text-overflow: ellipsis;
+    /* はみ出し時に「…」表示（任意） */
 }
 
 
@@ -485,6 +503,43 @@ table.info td {
     background-color: transparent;
 }
 
+/*feature関連*/
+.card-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-large {
+    width: 100%;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.card-group {
+    flex: 1 1 40%;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.arrow {
+    font-size: 24px;
+    color: #666;
+    text-align: center;
+}
 
 /*Work Scene関連*/
 .work-scene-slider {
@@ -494,8 +549,8 @@ table.info td {
 
 .slider-container {
     position: relative;
-    width: 90%;
-    max-width: 700px;
+    width: 100vw;
+    max-width: none;
     margin: auto;
     display: flex;
     align-items: center;
@@ -503,8 +558,13 @@ table.info td {
 }
 
 .slider-wrapper {
-    overflow: visible;
+    overflow: hidden;
     width: 100%;
+    max-width: 30%;
+    /* 表示領域はここで制限 */
+    margin: 0 auto;
+    /* 中央寄せ */
+    position: relative;
 }
 
 .slider {
