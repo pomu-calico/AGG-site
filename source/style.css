@@ -18,10 +18,6 @@ html {
     text-align: center;
 }
 
-.font-serif {
-    font-family: "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif;
-}
-
 .font-gothic {
     font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体"
 }
@@ -66,6 +62,7 @@ a {
     /* 要素間を均等に */
     align-items: center;
     /* 垂直方向の中央揃え */
+    gap: 20px;
     padding: 0px 20px 50px 20px;
 }
 
@@ -156,6 +153,7 @@ a {
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    margin:10px 20px;
 }
 
 .blue-card div{
@@ -261,7 +259,7 @@ a {
 .page-header {
     position: sticky;
     /*場所固定*/
-    font-family: Futura, 'Century Gothic';
+    font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
     top: 0;
     background-color: rgba(255, 255, 255, 0.8);
     z-index: 9999;
@@ -310,7 +308,7 @@ a {
 }
 
 .top-index .text1 {
-    font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+    font-family: "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif;
     font-weight: bold;
     position: absolute;
     /* ←ここで重ねる！ */
@@ -338,7 +336,7 @@ a {
     color: rgb(1, 104, 183);
     font-size: 35px;
     font-weight: 750;
-    font-family: Futura, 'Century Gothic';
+    font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
     z-index: 2;
     line-height: 150%;
 }
@@ -414,13 +412,12 @@ body {
 
 .sub-title {
     color: rgb(1, 104, 183);
-    font-family: 'DM Sans', sans-serif, 'Franklin Gothic Medium', 'Arial Narrow', Arial;
     font-weight: bold;
     text-align: center;
 }
 
-.sub-title.font60 {
-    font-size: 60px;
+.sub-title.font100 {
+    font-size: 100px;
     padding: 50px 0px 50px 0px;
     /*上　右　下　左*/
 }
@@ -446,7 +443,7 @@ body {
 .main-text {
     padding: 10px 250px 10px 250px;
     /*左右の白帯*/
-    font-family: "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝";
+
 }
 
 .catchcopy {
@@ -509,7 +506,6 @@ table.info td {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -520,6 +516,7 @@ table.info td {
     border-radius: 8px;
     padding: 24px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    max-width: 1200px;
 }
 .card-group {
     flex: 1 1 40%;
